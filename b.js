@@ -99,7 +99,7 @@ tools.pencil = function () {
     // This is called when you start holding down the mouse button.
     // This starts the pencil drawing.
     this.mousedown = function (ev) {
-        
+
         context.beginPath();
 
         // pencil properties
@@ -299,9 +299,16 @@ function changeColors(palette) {
     //return colors;
 };
 
+//Clear canvas
+function erase() {
+    contexto.clearRect(0, 0, canvaso.width, canvaso.height);
+};
+
+//Save image
+var button = document.getElementById('dwnld');
+button.addEventListener('click', function (e) {
+    var dataURL = canvaso.toDataURL('image/png');
+    button.href = dataURL;
+});
+
 init();
-
-
-
-
-
